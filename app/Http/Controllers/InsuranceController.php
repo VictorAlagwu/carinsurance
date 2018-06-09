@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Insurance;
+use App\Car;
 
 class InsuranceController extends Controller
 {
@@ -14,7 +16,7 @@ class InsuranceController extends Controller
     public function index()
     {
         //
-        $insurances = App\Insurance::all()->get();
+        $insurances = Insurance::where('user_id', auth()->id())->get();
         return view('insurances.index', compact('insurances'));
     }
 
@@ -27,7 +29,7 @@ class InsuranceController extends Controller
     {
         //
         $user = auth()->id();
-        $cars = Car::where('user_id', $user);
+        $cars = Car::where('user_id', $user)->get();
 
         return view('insurances.new', compact('cars'));
     }

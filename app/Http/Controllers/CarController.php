@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Car;
 
 class CarController extends Controller
 {
@@ -14,7 +15,7 @@ class CarController extends Controller
     public function index()
     {
         //
-        $cars = App\Car::where('user_id', auth()->id());
+        $cars = Car::where('user_id', auth()->id())->get();
         return view('cars.index', compact('cars'));
     }
 
@@ -26,7 +27,7 @@ class CarController extends Controller
     public function create()
     {
         //
-        return view('cars.create');
+        return view('cars.new');
     }
 
     /**

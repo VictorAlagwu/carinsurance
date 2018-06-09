@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Claim;
 
 class ClaimController extends Controller
 {
@@ -14,7 +15,8 @@ class ClaimController extends Controller
     public function index()
     {
         //
-        return view('claims.index');
+        $claims = Claim::where('user_id', auth()->id());
+        return view('claims.index', compact('claims'));
     }
 
     /**
