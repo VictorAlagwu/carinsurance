@@ -1,4 +1,4 @@
-@extends('layouts.dash')
+@extends('layouts.admin')
 @section('content')
         <div class="breadcrumbs">
             <div class="col-sm-4">
@@ -21,12 +21,26 @@
 
         <div class="content mt-3">
             <div class="row">
-
-            <div class="col-sm-6 col-lg-4">
+                <div class="col-sm-6 col-lg-3">
+                    <div class="card text-white bg-flat-color-4">
+                        <div class="card-body pb-0">
+                            
+                            <h4 class="mb-0">
+                                <span>{{$users->count()}}</span>
+                            </h4>
+                            <p class="text-light">Users</p>
+    
+                            <div class="chart-wrapper px-0" style="height:70px;" height="70">
+                                <canvas id="widgetChart2"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               <div class="col-sm-6 col-lg-3">
                     <div class="card text-white bg-flat-color-1">
                         <div class="card-body pb-0">
                             <h4 class="mb-0">
-                            <span>{{$car->count()}}</span>
+                            <span>{{$cars->count()}}</span>
                             </h4>
                             <p class="text-light">Cars Registered</p>
     
@@ -36,11 +50,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-lg-4">
+                <div class="col-sm-6 col-lg-3">
                     <div class="card text-white bg-flat-color-3">
                         <div class="card-body pb-0">
                             <h4 class="mb-0">
-                                <span>{{$insurance->count()}}</span>
+                                <span>{{$insurances->count()}}</span>
                             </h4>
                             <p class="text-light">Insurance</p>
     
@@ -50,12 +64,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-lg-4">
+                <div class="col-sm-6 col-lg-3">
                     <div class="card text-white bg-flat-color-2">
                         <div class="card-body pb-0">
                             
                             <h4 class="mb-0">
-                                <span>{{$claim->count()}}</span>
+                                <span>{{$claims->count()}}</span>
                             </h4>
                             <p class="text-light">Claims</p>
     

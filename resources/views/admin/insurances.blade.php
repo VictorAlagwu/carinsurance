@@ -1,4 +1,4 @@
-@extends('layouts.dash')
+@extends('layouts.admin')
 @section('content')
 <div class="breadcrumbs">
     <div class="col-sm-4">
@@ -13,8 +13,8 @@
             <div class="page-title">
                 <ol class="breadcrumb text-right">
                     <li><a href="#">Dashboard</a></li>
-                    <li><a href="#">Claims</a></li>
-                    <li class="active">View All Claims</li>
+                    <li><a href="#">Insurance</a></li>
+                    <li class="active">View All Insurance</li>
                 </ol>
             </div>
         </div>
@@ -37,21 +37,19 @@
                                 <th>Owner Name</th>
                                 <th>Car Name</th>
                                 <th>Plate Number</th>
-                                <th>Insurance Date</th>
+                                <th>Validity</th>
                                 <th>Amount</th>
-                                <th>Claim Status</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($claims as $claim)
+                            @foreach($insurances as $insurance)
                             <tr>
-                                <td>{{$claim->id}}</td>
-                                <td>{{$claim->user->name}}</td>
-                                <td>{{$claim->car->name}}</td>
-                                <td>{{$claim->car->plate_number}}</td>
-                                <td>{{$claim->car->insurance->validity}}</td>
-                                <td>{{$claim->car->insurance->amount}}</td>
-                                <td>{{$claim->status}}</td>
+                                <td>{{$insurance->id}}</td>
+                                <td>{{$insurance->user->name}}</td>
+                                <td>{{$insurance->car->name}}</td>
+                                <td>{{$insurance->car->plate_number}}</td>
+                                <td>{{$insurance->validity}}</td>
+                                <td>{{$insurance->amount}}</td>
                             </tr>
                             @endforeach
                             </tbody>

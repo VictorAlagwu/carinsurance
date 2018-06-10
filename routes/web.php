@@ -30,3 +30,10 @@ Route::post('insurances', 'InsuranceController@store');
 Route::get('claims', 'ClaimController@index');
 Route::get('claims/new', 'ClaimController@create');
 Route::post('claims', 'ClaimController@store');
+
+
+Route::get('admin', 'AdminController@index');
+Route::get('admin/cars', 'AdminController@viewCars');
+Route::get('admin/insurances', 'AdminController@viewInsurances');
+Route::get('admin/claims', 'AdminController@viewClaims');
+Route::post('admin/claims/{id}', 'AdminController@updateClaims');

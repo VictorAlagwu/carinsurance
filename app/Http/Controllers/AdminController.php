@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Claim;
 use App\Car;
 use App\Insurance;
+use App\Claim;
+use App\User;
 
-class ClaimController extends Controller
+class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,10 +18,41 @@ class ClaimController extends Controller
     public function index()
     {
         //
-        $claims = Claim::where('user_id', auth()->id())->get();
-        return view('claims.index', compact('claims'));
+        $cars = Car::all();
+        $insurances = Insurance::all();
+        $claims = Claim::all();
+        $users = User::all();
+
+        return view('admin.index',[
+            'cars' => $cars,
+            'insurances' => $insurances,
+            'claims' => $claims,
+            'users' => $users,
+        ]);
     }
 
+    public function viewCars()
+    {
+        $cars =  Car::all();
+        return view('admin.cars', compact('cars'));
+    }
+
+    public function viewInsurances()
+    {
+        $insurances = Insurance::all();
+        return view('admin.insurances', compact('insurances'));
+    }
+
+    public function viewClaims()
+    {
+        $claims = Claim::all();
+        return view('admin.claims', compact('claims'));
+    }
+
+    public function updateClaims(Request $request, $id)
+    {
+
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -29,8 +61,6 @@ class ClaimController extends Controller
     public function create()
     {
         //
-        $insurances = Insurance::where('user_id', auth()->id())->get();
-        return view('claims.new', compact('insurances'));
     }
 
     /**
@@ -42,13 +72,6 @@ class ClaimController extends Controller
     public function store(Request $request)
     {
         //
-        $claim['user_id'] = auth()->id();
-        $claim['car_id'] = $request->car_id;
-        $claim['status'] = "pending";
-
-        Claim::create($claim);
-
-        return redirect('claims');
     }
 
     /**

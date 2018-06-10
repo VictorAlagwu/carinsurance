@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+use App\Car;
+use App\Claim;
+use App\Insurance;
 
 class HomeController extends Controller
 {
@@ -23,6 +27,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $user = auth()->id();
+        $car = Car::where('user_id',$user);
+        $insurance = Insurance::where('user_id', $user);
+        $claim = Claim::where('user_id', $user);
+        return view('home', [
+            'user' => $user,
+            'car' => $car,
+            'insurance' => $insurance,
+            'claim' => $claim,
+        ]);
     }
 }

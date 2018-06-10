@@ -53,9 +53,7 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-car"></i>Cars</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-file-word-o"></i><a href="{{url('cars')}}">View all your Cars</a></li>
-                            <li><i class="fa fa-book"></i><a href="{{url('cars/new')}}">Register New Car</a></li>
-                        <li><i class="fa fa-th"></i><a href="">Edit Car Details</a></li>
+                            <li><i class="fa fa-file-word-o"></i><a href="{{url('admin/cars')}}">View all your Cars</a></li>
                             
                         </ul>
                     </li>
@@ -63,16 +61,14 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Insurances</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-table"></i><a href="{{url('insurances')}}">View all insured cars</a></li>
-                            <li><i class="fa fa-table"></i><a href="{{url('insurances/new')}}">Get New Insurance</a></li>
-                            <li><i class="fa fa-table"></i><a href="{{url('insurances')}}">Renew Insurance</a></li>
+                            <li><i class="fa fa-table"></i><a href="{{url('admin/insurances')}}">View all insured cars</a></li>
                         </ul>
                     </li>
                     <h3 class="menu-title">Claims</h3>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Claims</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-th"></i><a href="{{url('claims')}}">View all claims</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="{{url('admin/claims')}}">View all claims</a></li>
                             <li><i class="menu-icon fa fa-th"></i><a href="{{url('claims/new')}}">Send new Claim</a></li>
                         </ul>
                     </li>

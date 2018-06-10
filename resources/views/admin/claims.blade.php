@@ -1,4 +1,4 @@
-@extends('layouts.dash')
+@extends('layouts.admin')
 @section('content')
 <div class="breadcrumbs">
     <div class="col-sm-4">

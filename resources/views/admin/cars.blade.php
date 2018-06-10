@@ -1,4 +1,4 @@
-@extends('layouts.dash')
+@extends('layouts.admin')
 @section('content')
 <div class="breadcrumbs">
     <div class="col-sm-4">
@@ -13,8 +13,8 @@
             <div class="page-title">
                 <ol class="breadcrumb text-right">
                     <li><a href="#">Dashboard</a></li>
-                    <li><a href="#">Claims</a></li>
-                    <li class="active">View All Claims</li>
+                    <li><a href="#">Car</a></li>
+                    <li class="active">View all Car</li>
                 </ol>
             </div>
         </div>
@@ -34,24 +34,20 @@
                             <thead>
                             <tr>
                                 <th>S/N</th>
-                                <th>Owner Name</th>
-                                <th>Car Name</th>
+                                <th>Name</th>
                                 <th>Plate Number</th>
-                                <th>Insurance Date</th>
-                                <th>Amount</th>
-                                <th>Claim Status</th>
+                                <th>Manufacturer</th>
+                                <th>Color</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($claims as $claim)
+                            @foreach($cars as $car)
                             <tr>
-                                <td>{{$claim->id}}</td>
-                                <td>{{$claim->user->name}}</td>
-                                <td>{{$claim->car->name}}</td>
-                                <td>{{$claim->car->plate_number}}</td>
-                                <td>{{$claim->car->insurance->validity}}</td>
-                                <td>{{$claim->car->insurance->amount}}</td>
-                                <td>{{$claim->status}}</td>
+                                <td>{{$car->id}}</td>
+                                <td>{{$car->name}}</td>
+                                <td>{{$car->plate_number}}</td>
+                                <td>{{$car->manufacturer}}</td>
+                                <td>{{$car->color}}</td>
                             </tr>
                             @endforeach
                             </tbody>
