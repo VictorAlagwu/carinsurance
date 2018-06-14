@@ -72,6 +72,14 @@
                             <li><i class="menu-icon fa fa-th"></i><a href="{{url('claims/new')}}">Send new Claim</a></li>
                         </ul>
                     </li>
+
+                    <h3 class="menu-title">Packages</h3>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Packages</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="fa fa-table"></i><a href="{{url('admin/packages')}}">View all Packages</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>

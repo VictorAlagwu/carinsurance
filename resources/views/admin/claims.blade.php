@@ -40,6 +40,9 @@
                                 <th>Insurance Date</th>
                                 <th>Amount</th>
                                 <th>Claim Status</th>
+                                <th>Status Action
+
+                                </th>
                             </tr>
                             </thead>
                             <tbody>
@@ -51,7 +54,23 @@
                                 <td>{{$claim->car->plate_number}}</td>
                                 <td>{{$claim->car->insurance->validity}}</td>
                                 <td>{{$claim->car->insurance->amount}}</td>
-                                <td>{{$claim->status}}</td>
+                                <td>{!! $claim->status == 'pending' ? '<strong class="alert alert-danger">Pending</strong>':'<strong class="alert alert-success">Approved</strong>'!!}</td>
+                                <td>
+                                    <form method="POST" action="{{route('admin/claim/approve/', $claim->id)}}">
+                                      {{ csrf_field() }}
+                                      <input type="hidden" status="approved"/>
+                                      <button type="submit" class="btn btn-success">
+                                      <span><i class="fa fa-check"></i>Approve</span>
+                                      </button>
+                                    </form>
+                                    <form method="POST" action="{{route('admin/claim/reject/', $claim->id)}}">
+                                      {{ csrf_field() }}
+                                      <input type="hidden" status="pending"/>
+                                      <button type="submit" class="btn btn-danger">
+                                      <span><i class="fa fa-times"></i>Pending</span>
+                                      </button>
+                                    </form>
+                                  </td>
                             </tr>
                             @endforeach
                             </tbody>

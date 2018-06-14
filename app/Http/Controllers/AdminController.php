@@ -7,6 +7,7 @@ use App\Car;
 use App\Insurance;
 use App\Claim;
 use App\User;
+use App\Package;
 
 class AdminController extends Controller
 {
@@ -53,69 +54,41 @@ class AdminController extends Controller
     {
 
     }
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+   
+    public function claimApprove($id)
     {
         //
+       
+        $claim = Claim::findOrFail($id);
+        
+        $claim->status = "approved";
+        $claim->save();
+        return back();
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function claimReject($id)
     {
         //
+       
+        $claim = Claim::findOrFail($id);
+        
+        $claim->status = "pending";
+        $claim->save();
+        return back();
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function viewPackages()
     {
-        //
+        $packages = Package::all();
+        return view('admin.packages', compact('packages'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function storePackages(Request $request)
     {
-        //
-    }
+        $package['name'] = $request->name;
+        $package['amount'] = $request->amount;
+        Package::create($package);
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        return back();
     }
 }
