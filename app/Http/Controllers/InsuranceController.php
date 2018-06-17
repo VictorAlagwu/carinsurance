@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Insurance;
 use App\Car;
+use App\Package;
 
 class InsuranceController extends Controller
 {
@@ -30,8 +31,9 @@ class InsuranceController extends Controller
         //
         $user = auth()->id();
         $cars = Car::where('user_id', $user)->get();
+        $packages = Package::all();
 
-        return view('insurances.new', compact('cars'));
+        return view('insurances.new', compact('cars', 'packages'));
     }
 
     /**
@@ -45,6 +47,7 @@ class InsuranceController extends Controller
         //
         $insurance['user_id'] =  auth()->id();
         $insurance['car_id'] = $request->car_id;
+        $insurance['package_id'] = $request->package_id;
         $insurance['validity'] = $request->validity;
         $insurance['amount'] = $request->amount;
 

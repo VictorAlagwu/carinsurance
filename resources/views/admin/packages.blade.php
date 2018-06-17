@@ -33,7 +33,7 @@
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Add Occupation
+                                    Add Package
                                 </button>
                             </div>
                         </div>
@@ -48,6 +48,7 @@
                         <th scope="col">ID</th>
                         <th scope="col">Package Name</th>
                         <th scope="col">Package Amount</th>
+                        <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -56,6 +57,11 @@
                             <td scope="row"s>{{$package->id}}</td>
                             <td>{{$package->name}}</td>
                             <td>{{$package->amount}}</td>
+                            <td>
+                                <a href="{{route('admin/packages/edit/', $package->id)}}">
+                                    <span><i class="fa fa-edit"></i>Edit</span>
+                                </a>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>

@@ -24,4 +24,9 @@ class Insurance extends Model
         return $this->hasOne(Claim::class);
     }
 
+    public function package()
+    {
+        return $this->belongsTo(Insurance::class);
+    }
+
 }

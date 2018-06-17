@@ -38,7 +38,7 @@
                                 <th>Car Name</th>
                                 <th>Plate Number</th>
                                 <th>Validity</th>
-                                <th>Amount</th>
+                                <th>Plan</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -49,7 +49,7 @@
                                 <td>{{$insurance->car->name}}</td>
                                 <td>{{$insurance->car->plate_number}}</td>
                                 <td>{{$insurance->validity}}</td>
-                                <td>{{$insurance->amount}}</td>
+                                <td>{{$insurance->package->name}}</td>
                             </tr>
                             @endforeach
                             </tbody>

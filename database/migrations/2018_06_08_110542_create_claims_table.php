@@ -17,7 +17,6 @@ class CreateClaimsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('car_id');
-            $table->unsignedInteger('insurance_id');
             $table->string('status');
             $table->timestamps();
         });

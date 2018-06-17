@@ -91,4 +91,23 @@ class AdminController extends Controller
 
         return back();
     }
+
+    public function editPackage($id)
+    {
+        $package = Package::where('id',$id)->first();
+        return view('admin.package.edit', compact('package'));
+    }
+
+    public function updatePackage(Request $request, $id)
+    {
+        //
+        
+        $package['name'] = $request->name;
+        $package['amount'] = $request->amount;
+
+        Package::where('id',$id)->update($package);
+
+        return redirect ('admin/packages');
+    }
+
 }

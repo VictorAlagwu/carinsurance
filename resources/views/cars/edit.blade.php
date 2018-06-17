@@ -13,8 +13,8 @@
             <div class="page-title">
                 <ol class="breadcrumb text-right">
                     <li><a href="#">Dashboard</a></li>
-                    <li><a href="#">Insurance</a></li>
-                    <li class="active">New Insurance</li>
+                    <li><a href="#">Car</a></li>
+                    <li class="active">New Car</li>
                 </ol>
             </div>
         </div>
@@ -28,45 +28,44 @@
                         <div class="card-header">
                             <strong>Enter Car Details</strong> <small> </small>
                         </div>
-                        <form method="POST" action="{{url('insurances')}}">
+                        <form method="POST" action="{{url('cars')}}">
                                 {{ csrf_field() }}
                                 <div class="card-body card-block">
                                         <div class="form-group">
                                             <label class=" form-control-label">Name of Car</label>
                                             <div class="input-group">
                                                 <div class="input-group-addon"><i class="fa fa-car"></i></div>
-                                                <select data-placeholder="Choose a Car..." class="standardSelect" name="car_id" tabindex="1">
-                                                    @foreach ($cars as $car)
-                                                        <option value="{{$car->id}}">{{$car->name. '(Plate Number: '. $car->plate_number.')'}}</option>
-                                                    @endforeach
-                                                </select>
+                                                <input class="form-control" name="name" value="{{$car->name}}">
                                             </div>
                                             <small class="form-text text-muted">ex. Toyota High Lander</small>
                                         </div>
                                         <div class="form-group">
-                                            <label class=" form-control-label">Validity</label>
+                                            <label class=" form-control-label">Plate Number</label>
                                             <div class="input-group">
                                                 <div class="input-group-addon"><i class="fa fa-credit-card"></i></div>
-                                                <input type="date" class="form-control" name="validity">
+                                                <input class="form-control" name="plate_number" value="{{$car->plate_number}}">
                                             </div>
-                                            <small class="form-text text-muted">ex. </small>
+                                            <small class="form-text text-muted">ex. AAA-99-9999</small>
                                         </div>
                                         <div class="form-group">
-                                            <label class=" form-control-label">Package/Plan</label>
+                                            <label class=" form-control-label">Manufacturer</label>
                                             <div class="input-group">
                                                 <div class="input-group-addon"><i class="fa fa-asterisk"></i></div>
-                                                <select data-placeholder="Select a Package/Plan..." class="standardSelect" name="car_id" tabindex="1">
-                                                    @foreach ($packages as $package)
-                                                        <option value="{{$package->id}}">{{$package->name. ' #'. $package->amount.''}}</option>
-                                                    @endforeach
-                                                </select>
+                                                <input class="form-control" name="manufacturer" value="{{$car->manufacturer}}">
                                             </div>
-                                            <small class="form-text text-muted">ex. Beginner</small>
+                                            <small class="form-text text-muted">ex. Fords Motors</small>
                                         </div>
-                                        
+                                        <div class="form-group">
+                                            <label class=" form-control-label">Car Color</label>
+                                            <div class="input-group">
+                                                <div class="input-group-addon"><i class="fa fa-pencil"></i></div>
+                                                <input class="form-control" name="color" value="{{$car->color}}">
+                                            </div>
+                                            <small class="form-text text-muted">ex. Black</small>
+                                        </div>
                                     </div>
                                     <div class="form-group text-center">
-                                        <button type="submit" class="btn btn-primary" name="submit">Get Insured</button>
+                                        <button type="submit" class="btn btn-primary" name="submit">Edit Car Details</button>
                                     </div>
 
                         </form>

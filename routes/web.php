@@ -37,6 +37,9 @@ Route::get('admin/cars', 'AdminController@viewCars');
 Route::get('admin/insurances', 'AdminController@viewInsurances');
 Route::get('admin/packages', 'AdminController@viewPackages');
 Route::post('admin/packages', 'AdminController@storePackages')->name('admin/packages');
+Route::get('admin/packages/edit/{id}', 'AdminController@editPackage')->name('admin/packages/edit/');
+Route::patch('admin/packages/edit/{id}', 'AdminController@updatePackage')->name('admin/packages/edit/');
+
 Route::get('admin/claims', 'AdminController@viewClaims');
 Route::post('admin/claims/{id}', 'AdminController@updateClaims');
 Route::post('admin/claim/approve/{id}', 'AdminController@claimApprove')->name('admin/claim/approve/');

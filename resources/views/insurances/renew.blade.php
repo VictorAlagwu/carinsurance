@@ -36,9 +36,7 @@
                                             <div class="input-group">
                                                 <div class="input-group-addon"><i class="fa fa-car"></i></div>
                                                 <select data-placeholder="Choose a Car..." class="standardSelect" name="car_id" tabindex="1">
-                                                    @foreach ($cars as $car)
                                                         <option value="{{$car->id}}">{{$car->name. '(Plate Number: '. $car->plate_number.')'}}</option>
-                                                    @endforeach
                                                 </select>
                                             </div>
                                             <small class="form-text text-muted">ex. Toyota High Lander</small>
