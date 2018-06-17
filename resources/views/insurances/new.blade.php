@@ -55,7 +55,7 @@
                                             <label class=" form-control-label">Package/Plan</label>
                                             <div class="input-group">
                                                 <div class="input-group-addon"><i class="fa fa-asterisk"></i></div>
-                                                <select data-placeholder="Select a Package/Plan..." class="standardSelect" name="car_id" tabindex="1">
+                                                <select data-placeholder="Select a Package/Plan..." class="standardSelect" name="package_id" tabindex="1">
                                                     @foreach ($packages as $package)
                                                         <option value="{{$package->id}}">{{$package->name. ' #'. $package->amount.''}}</option>
                                                     @endforeach

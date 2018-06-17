@@ -47,7 +47,7 @@
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a href="{{url('/home')}}"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+                        <a href="{{url('/admin')}}"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
                     <h3 class="menu-title">Cars</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
@@ -69,7 +69,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Claims</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="menu-icon fa fa-th"></i><a href="{{url('admin/claims')}}">View all claims</a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="{{url('claims/new')}}">Send new Claim</a></li>
+                            
                         </ul>
                     </li>
 

@@ -38,7 +38,7 @@
                                 <th>Car Name</th>
                                 <th>Plate Number</th>
                                 <th>Insurance Date</th>
-                                <th>Amount</th>
+                                <th>Plan/Package</th>
                                 <th>Claim Status</th>
                             </tr>
                             </thead>
@@ -50,8 +50,9 @@
                                 <td>{{$claim->car->name}}</td>
                                 <td>{{$claim->car->plate_number}}</td>
                                 <td>{{$claim->car->insurance->validity}}</td>
-                                <td>{{$claim->car->insurance->amount}}</td>
-                                <td>{{$claim->status}}</td>
+                                <td>{{$claim->car->insurance->package->name}}</td>
+                                <td>{!! $claim->status == 'pending' ? '<strong class="alert alert-danger">Pending</strong>':'<strong class="alert alert-success">Approved</strong>'!!}</td>
+                                
                             </tr>
                             @endforeach
                             </tbody>

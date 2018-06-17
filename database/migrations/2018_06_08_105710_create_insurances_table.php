@@ -19,7 +19,6 @@ class CreateInsurancesTable extends Migration
             $table->unsignedInteger('car_id');
             $table->unsignedInteger('package_id');
             $table->date('validity');
-            $table->integer('amount');
             $table->timestamps();
         });
     }

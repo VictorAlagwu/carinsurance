@@ -55,8 +55,8 @@
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa fa-file-word-o"></i><a href="{{url('cars')}}">View all your Cars</a></li>
                             <li><i class="fa fa-book"></i><a href="{{url('cars/new')}}">Register New Car</a></li>
-                        <li><i class="fa fa-th"></i><a href="">Edit Car Details</a></li>
-                            
+                        {{-- <li><i class="fa fa-th"></i><a href="">Edit Car Details</a></li>
+                             --}}
                         </ul>
                     </li>
                     <h3 class="menu-title">Insurances</h3>
@@ -65,7 +65,7 @@
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa fa-table"></i><a href="{{url('insurances')}}">View all insured cars</a></li>
                             <li><i class="fa fa-table"></i><a href="{{url('insurances/new')}}">Get New Insurance</a></li>
-                            <li><i class="fa fa-table"></i><a href="{{url('insurances')}}">Renew Insurance</a></li>
+                            {{-- <li><i class="fa fa-table"></i><a href="{{url('insurances')}}">Renew Insurance</a></li> --}}
                         </ul>
                     </li>
                     <h3 class="menu-title">Claims</h3>

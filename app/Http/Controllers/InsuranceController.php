@@ -9,6 +9,16 @@ use App\Package;
 
 class InsuranceController extends Controller
 {
+
+       /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -49,7 +59,6 @@ class InsuranceController extends Controller
         $insurance['car_id'] = $request->car_id;
         $insurance['package_id'] = $request->package_id;
         $insurance['validity'] = $request->validity;
-        $insurance['amount'] = $request->amount;
 
         Insurance::create($insurance);
 

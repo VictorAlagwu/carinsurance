@@ -26,7 +26,7 @@ class Insurance extends Model
 
     public function package()
     {
-        return $this->belongsTo(Insurance::class);
+        return $this->belongsTo(Package::class);
     }
 
 }

@@ -49,7 +49,7 @@
                                 <td>{{$insurance->car->name}}</td>
                                 <td>{{$insurance->car->plate_number}}</td>
                                 <td>{{$insurance->validity}}</td>
-                                <td>{{$insurance->package->name}}</td>
+                                <td>{{$insurance->package->name.' - ₦'.number_format($insurance->package->amount)}}</td>
                             </tr>
                             @endforeach
                             </tbody>
